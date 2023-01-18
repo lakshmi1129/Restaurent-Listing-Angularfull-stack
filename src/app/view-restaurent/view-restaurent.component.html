@@ -1,0 +1,92 @@
+<!-- Product section-->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center text-light">
+            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0 rounded w-50" src={{restDetails.photograph}}
+                    alt="" /></div>
+            <div class="col-md-6">
+                <div class="small mb-1">ID:{{restDetails.id}}</div>
+                <h1 class="display-5 fw-bolder">{{restDetails.name}}</h1>
+
+                <!-- update/delete -->
+                <div class="fs-5 mb-2 ">
+                    <!-- router link is used in a tag which doesnt refreashes the data in browser -->
+                    <a class="text-decoration-none" routerLink="/update-restaurent/{{restDetails.id}}">Update Restuarant</a> |
+                    <a class="text-decoration-none" routerLink="/delete-restaurent/{{restDetails.id}}">Delete Restuarant</a>
+                </div>
+
+
+
+                <div class="fs-3 mb-3">
+                    <p>Neighborhood:{{restDetails.neighborhood}}</p>
+                    <p class="">Cuisine_type:{{restDetails.cuisine_type}}</p>
+
+                </div>
+                <p class="lead">Address: {{restDetails.address}}</p>
+
+
+
+
+                <!-- operating hours -->
+
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary w-50" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    Operating Hours
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content text-dark">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel"> Operating Hours</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item">Monday: {{restDetails.operating_hours['Monday']}}</li>
+                                    <li class="list-group-item">Tuesday: {{restDetails.operating_hours['Tuesday']}}</li>
+                                    <li class="list-group-item">Wednesday: {{restDetails.operating_hours['Wednesday']}}</li>
+                                    <li class="list-group-item">Thursday: {{restDetails.operating_hours['Thursday']}}</li>
+                                    <li class="list-group-item">Friday: {{restDetails.operating_hours['Friday']}}</li>
+                                    <li class="list-group-item">Saturday: {{restDetails.operating_hours['Saturday']}}</li>
+                                    <li class="list-group-item">Sunday: {{restDetails.operating_hours['Sunday']}}</li>
+                                  </ul>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Reviews -->
+
+                <p>
+
+                    <button class="btn btn-primary mt-3" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        Reviews
+                    </button>
+                </p>
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body bg-dark text-light">
+                        <div class="mt-2" *ngFor="let item of restDetails.reviews">
+                       <h5>{{item['name']}} ( {{item['date']}}</h5>
+                       <h6><b>Rating</b>: {{item['rating']}}</h6>
+                       <p><b>Comments</b>: {{item['comments']}}</p>
+                    </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</section>

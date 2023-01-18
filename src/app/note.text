@@ -1,0 +1,78 @@
+                Angular -Front end technology
+
+                -Basic commands
+
+            1. to create project -ng new project-name
+            2. to run project - ng serve / ng serve --open
+            3. to generate Components - ng g c component-name
+            4. to create service - ng g s service-name
+
+
+                Basic concepts
+
+
+        1. Module -import libraries -root module - AppModule
+
+        2. Components -generate html,css,ts - Root components -Appcomponent
+
+        3. To setup path for component - AppRoutingModule
+          - syntax : { path :'path name' , component:Component-Name } inside routes Array
+
+        4. Selectors -replace it with corresponding component HTML page
+
+        5. <router-outlet>  selector is used to switch page according to user request in root component HTML page
+
+
+        6.Angular Services - reusable code can be stored and we can use it in all components across the application (api call etc)
+
+        7.Dependency injection - share data between depenedent classes (in constructor)
+            format- access specifiers variable-name: dependent class name 
+            access specifires (public/private)
+
+        8.Asynchronous function call - using observable technique (rxjs library)
+              -resolve ( subscribe )
+              -reject (catch )
+                
+        9.Data binding - share data within a component
+             9.1. one way binding  -  share only in one direction at a time
+
+                9.1.1. Component(ts) to View(HTML) file
+                  a)  String Interpolation
+                        in HTML --> Syntax --->   {{class property name}}
+
+                  b)  property binding --> syntax --> [attribute] ="class property name"
+
+
+                9.1.2.  View (HTML) to component(ts) file
+
+                  9.1.2. Event Binding - (event-name) = "function call"
+
+                  9.1.2. Event Binding using $event - (event-name) = "function call($event)"
+
+            9.2. two way binding  -sharing in both direction.
+
+              9.2.1. ngModel - import FormsModule, [(ngModel)] = "property name in ts file"
+
+
+        10. angular directive - to manipulate Document object module
+
+          10.1. Component directive
+
+          10.2. Structural Directive - based on condition or Array length we can add or remove HTML elements in Document OBJect Model
+            10.2.1.  *ngIf ="condition"   inside HTML elements
+            10.2.2.  *ngFor ="let iterator of array-name"    inside html for array length
+
+
+          10.3. attribute Directive - based on some value or class property we can set the style of HTML Elements
+
+        11. Activated Route -Provides access to information about a route associated with a component that is loaded in an outlet.
+
+
+        12.ngForm - used to track the form values
+        
+        13.pipe - Use pipes to transform strings, currency amounts, dates, and other data for display. 
+
+        14. Behaviour Subject - Used which acts as a single store 
+        As we know multiple components share the common data and always need updated shared data. In such scenarios most of the time BehaviorSubject is used which acts as a single store to hold updated shared data.
+
+BehaviorSubject is both observer and type of observable.
